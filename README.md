@@ -11,20 +11,22 @@ Then once the call has returned it will set the isLoading state variable back to
 
 # App.js
 
+```
 import {AsyncHandlerContextProvider} from "react-async-context";
 
 function App() {
-return (
-<div className="App">
-<header className="App-header">
-<AsyncHandlerContextProvider>
-<Content/>
-</AsyncHandlerContextProvider>
-)
+	return (
+		<div className="App">
+			<AsyncHandlerContextProvider>
+				<Content/>
+			</AsyncHandlerContextProvider>
+	)
 }
-================
-Content.js
-================
+```
+
+#Content.js
+
+```
 import React from "react";
 
 import {useAsyncHandlerContext} from "react-async-context";
@@ -41,10 +43,11 @@ const makeCall = async () => {
     console.log(data);
 
 };
-return (
-<div className="container">
-<button onClick={makeCall}>make call</button>
-<div>{isLoading ? <h1>waiting for async call...</h1> : <h1>async call has returned</h1>}</div>
-</div>
-);
+	return (
+		<div className="container">
+			<button onClick={makeCall}>make call</button>
+			<div>{isLoading ? <h1>waiting for async call...</h1> : <h1>async call has returned</h1>}</div>
+		</div>
+	);
 }
+```

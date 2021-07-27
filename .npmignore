@@ -2,3 +2,4 @@ src
 webpack.config.js
 .babelrc
 .eslintrc.js
+react-async-context-0.1.0*
